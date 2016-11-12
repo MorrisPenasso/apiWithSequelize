@@ -1,0 +1,10 @@
+{
+  "globalDependencies": {
+    "body-parser": "registry:dt/body-parser#0.0.0+20160619023215",
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "node": "registry:dt/node#6.0.0+20161110151007",
+    "sequelize": "registry:dt/sequelize#3.4.1+20160929080558",
+    "sqlite3": "registry:dt/sqlite3#2.2.3+20160724070935",
+    "underscore": "registry:dt/underscore#1.8.3+20161016154529"
+  }
+}

@@ -1,6 +1,5 @@
 ﻿var express = require("express");
 var app = new express();
-var _ = require("underscore");
 var db = require("./db.js");
 
 
