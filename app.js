@@ -53,7 +53,9 @@ app.get("/findPerson", function (req, res) {
     }
 
     if (query.description) {
-        queryAttrs.description = query.description;
+        queryAttrs.description = {
+            $like: "%" + query.description + "%"
+        }
     }
     if (query.person == "true") {
         queryAttrs.person = true;
@@ -73,7 +75,7 @@ app.get("/findPerson", function (req, res) {
     });
 })
 
-// insert new item into sequelize database
+// insert new person into sequelize database
 app.post("/insertPerson", function (req, res) {
 
     var data = req.body;
@@ -88,7 +90,7 @@ app.post("/insertPerson", function (req, res) {
     })
 });
 
-// delete existing item into sequelize database
+// delete existing person into sequelize database
 app.delete("/deletePerson/:id", function (req, res) {
 
     var id = parseInt(req.params.id, 10);
