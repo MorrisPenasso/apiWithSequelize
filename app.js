@@ -45,7 +45,6 @@ app.get("/findPerson/:id", function (req, res) {
 app.get("/findPerson", function (req, res) {
 
     var query = req.query;
-
     var queryAttrs = {};
 
     if (query.name) {
