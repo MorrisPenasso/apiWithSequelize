@@ -33,12 +33,12 @@ app.get("/findPerson/:id", function (req, res) {
         }
     }).then(function (data) {
         if (!data) {
-            console.log("This person is not exist");
+            res.status(404).send("This person is not exist");
         } else {
             console.log("Person matched");
             res.send(data.toJSON());
         }
-        });    
+    });
 });
 
 // search an existing person with query into URL Request
@@ -59,20 +59,20 @@ app.get("/findPerson", function (req, res) {
     }
     if (query.person == "true") {
         queryAttrs.person = true;
-    } else if (query.person == "false")  {
+    } else if (query.person == "false") {
         queryAttrs.person = false;
     }
 
     db.model.findAll({
         where: queryAttrs
     }).then(function (data) {
-        if (!data) {
-            console.log("The persons with this query not exist");
-        } else {
-            console.log("Person matched");
+
+        if (data) {
             res.send(data);
+        } else {
+            res.status(404).send("This person is not exist");
         }
-    });
+    })
 })
 
 // insert new person into sequelize database
