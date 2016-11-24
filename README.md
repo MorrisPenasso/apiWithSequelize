@@ -1,5 +1,5 @@
 # apiWithSequelize
-**A simple NodeJS application for show how work a Sequelize database**
+**A simple NodeJS application for show how work Sequelize**
 
 This is a simple application built with NodeJS, ExpressJS and Sequelize.
 
